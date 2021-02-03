@@ -13,28 +13,28 @@ def read_input(path: str):
     return lines
 
 
-# def left_to_right_check(input_line: str, pivot: int):
-#     """
-#     Check row-wise visibility from left to right.
-#     Return True if number of building from the left-most hint is visible looking to the right,
-#     False otherwise.
+def left_to_right_check(input_line: str, pivot: int):
+    """
+    Check row-wise visibility from left to right.
+    Return True if number of building from the left-most hint is visible looking to the right,
+    False otherwise.
 
-#     input_line - representing board row.
-#     pivot - number on the left-most hint of the input_line.
+    input_line - representing board row.
+    pivot - number on the left-most hint of the input_line.
 
-#     >>> left_to_right_check("412453*", 4)
-#     True
-#     >>> left_to_right_check("452453*", 5)
-#     False
-#     """
-#     builds = input_line[1:-1]
-#     # print(builds)
-#     for i in range(pivot-1):
-#         if builds[i] > builds[i+1]:
-#             return False
-#     if builds[pivot-1] < builds[pivot]:
-#         return False
-#     return True
+    >>> left_to_right_check("412453*", 4)
+    True
+    >>> left_to_right_check("452453*", 5)
+    False
+    """
+    builds = input_line[1:-1]
+    # print(builds)
+    for i in range(pivot-1):
+        if builds[i] > builds[i+1]:
+            return False
+    if builds[pivot-1] < builds[pivot]:
+        return False
+    return True
 
 
 # def check_not_finished_board(board: list):
